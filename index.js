@@ -11,6 +11,10 @@ const io = require("socket.io")(server, {
     }
 })
 
+app.use(cors({
+  origin: "https://mohitvideocall.netlify.app"
+}))
+
 io.on('connection', socket => {
     socket.emit("me", socket.id);
 
